@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "holosigns:block/glass_hanging_sign"
+    }
+  }
+}

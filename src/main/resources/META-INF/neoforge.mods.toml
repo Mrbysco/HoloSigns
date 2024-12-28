@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+issueTrackerURL="https://github.com/Mrbysco/HoloSigns/issues"
+license="MIT"
+
+[[mods]]
+modId="holosigns"
+version="${file.jarVersion}"
+displayName="HoloSigns"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/holosigns"
+authors="Mrbysco, ShyNieke"
+description='''
+Signs that can display text in the air.
+'''
+[[dependencies.holosigns]]
+modId="minecraft"
+type="required"
+versionRange="[1.21,1.22)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.holosigns]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.1,)"
+ordering="NONE"
+side="BOTH"
+[[mixins]]
+config="holosigns.mixins.json"

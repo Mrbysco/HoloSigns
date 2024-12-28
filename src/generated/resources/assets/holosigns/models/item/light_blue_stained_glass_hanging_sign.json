@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "holosigns:item/light_blue_stained_glass_hanging_sign"
+  }
+}

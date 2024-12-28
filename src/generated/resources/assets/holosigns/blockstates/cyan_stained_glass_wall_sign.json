@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "holosigns:block/cyan_stained_glass_sign"
+    }
+  }
+}
