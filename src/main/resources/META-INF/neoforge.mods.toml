@@ -10,7 +10,7 @@ displayName="HoloSigns"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/holosigns"
 authors="Mrbysco, ShyNieke"
 description='''
-Signs that can display text in the air.
+Adds the ability to turn not render signs and add glass signs
 '''
 [[dependencies.holosigns]]
 modId="minecraft"
