@@ -8,7 +8,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
@@ -17,12 +16,12 @@ import net.neoforged.neoforge.common.Tags;
 import java.util.concurrent.CompletableFuture;
 
 public class SignRecipeProvider extends RecipeProvider {
-	public SignRecipeProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider) {
-		super(packOutput, lookupProvider);
+	public SignRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+		super(provider, recipeOutput);
 	}
 
 	@Override
-	protected void buildRecipes(RecipeOutput output, HolderLookup.Provider provider) {
+	protected void buildRecipes() {
 		generateSigns(output, Blocks.GLASS, SignRegistry.GLASS);
 		generateSigns(output, Blocks.WHITE_STAINED_GLASS, SignRegistry.WHITE_STAINED_GLASS);
 		generateSigns(output, Blocks.ORANGE_STAINED_GLASS, SignRegistry.ORANGE_STAINED_GLASS);
@@ -48,7 +47,7 @@ public class SignRecipeProvider extends RecipeProvider {
 	}
 
 	private void generateSign(RecipeOutput output, ItemLike material, ItemLike sign) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, sign, 6)
+		shaped(RecipeCategory.DECORATIONS, sign, 6)
 				.pattern("###")
 				.pattern("###")
 				.pattern(" S ")
@@ -61,7 +60,7 @@ public class SignRecipeProvider extends RecipeProvider {
 
 
 	private void generateHangingSign(RecipeOutput output, ItemLike material, ItemLike sign) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, sign, 6)
+		shaped(RecipeCategory.DECORATIONS, sign, 6)
 				.pattern("X X")
 				.pattern("###")
 				.pattern("###")
@@ -70,5 +69,21 @@ public class SignRecipeProvider extends RecipeProvider {
 				.define('X', Items.CHAIN)
 				.unlockedBy("has_material", has(material))
 				.save(output);
+	}
+
+	public static class Runner extends RecipeProvider.Runner {
+		public Runner(PackOutput output, CompletableFuture<Provider> completableFuture) {
+			super(output, completableFuture);
+		}
+
+		@Override
+		protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+			return new SignRecipeProvider(provider, recipeOutput);
+		}
+
+		@Override
+		public String getName() {
+			return "HoloSigns Recipes";
+		}
 	}
 }

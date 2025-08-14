@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "hanging_sign",
   "key": {
-    "#": {
-      "item": "minecraft:lime_stained_glass"
-    },
-    "X": {
-      "item": "minecraft:chain"
-    }
+    "#": "minecraft:lime_stained_glass",
+    "X": "minecraft:chain"
   },
   "pattern": [
     "X X",

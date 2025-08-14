@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "sign",
   "key": {
-    "#": {
-      "item": "minecraft:glass"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "#": "minecraft:glass",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "###",

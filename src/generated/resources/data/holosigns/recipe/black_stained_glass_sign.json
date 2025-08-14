@@ -3,12 +3,8 @@
   "category": "misc",
   "group": "sign",
   "key": {
-    "#": {
-      "item": "minecraft:black_stained_glass"
-    },
-    "S": {
-      "tag": "c:rods/wooden"
-    }
+    "#": "minecraft:black_stained_glass",
+    "S": "#c:rods/wooden"
   },
   "pattern": [
     "###",

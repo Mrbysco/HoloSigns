@@ -15,13 +15,13 @@ Adds the ability to turn not render signs and add glass signs
 [[dependencies.holosigns]]
 modId="minecraft"
 type="required"
-versionRange="[1.21,1.22)"
+versionRange="[1.21.4,1.22)"
 ordering="NONE"
 side="BOTH"
 [[dependencies.holosigns]]
 modId="neoforge"
 type="required"
-versionRange="[21.1.1,)"
+versionRange="[21.4.0-beta,)"
 ordering="NONE"
 side="BOTH"
 [[mixins]]

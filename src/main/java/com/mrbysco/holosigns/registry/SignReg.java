@@ -83,21 +83,24 @@ public class SignReg {
 				.forceSolidOn()
 				.noCollission()
 				.strength(1.0F)
-				.ignitedByLava()));
+				.ignitedByLava()
+		));
 		this.WALL_SIGN = SignRegistry.BLOCKS.registerBlock(name + "_wall_sign", (properties) -> new WallSignBlock(this.TYPE, properties
 				.mapColor(color)
 				.forceSolidOn()
 				.noCollission()
 				.strength(1.0F)
-				.dropsLike(SIGN.get())
-				.ignitedByLava()));
+				.overrideLootTable(SIGN.get().getLootTable())
+				.ignitedByLava()
+		));
 		this.HANGING_SIGN = SignRegistry.BLOCKS.registerBlock(name + "_hanging_sign", (properties) -> new CeilingHangingSignBlock(this.TYPE, properties
 				.mapColor(color)
 				.forceSolidOn()
 				.instrument(NoteBlockInstrument.BASS)
 				.noCollission()
 				.strength(1.0F)
-				.ignitedByLava()));
+				.ignitedByLava()
+		));
 		this.WALL_HANGING_SIGN = SignRegistry.BLOCKS.registerBlock(name + "_wall_hanging_sign", (properties) -> new WallHangingSignBlock(this.TYPE, properties
 				.mapColor(color)
 				.forceSolidOn()
@@ -105,8 +108,9 @@ public class SignReg {
 				.noCollission()
 				.strength(1.0F)
 				.ignitedByLava()
-				.dropsLike(HANGING_SIGN.get())));
-		this.SIGN_ITEM = SignRegistry.ITEMS.register(name + "_sign", () -> new SignItem(new Item.Properties().stacksTo(16), SIGN.get(), WALL_SIGN.get()));
-		this.HANGING_SIGN_ITEM = SignRegistry.ITEMS.register(name + "_hanging_sign", () -> new HangingSignItem(HANGING_SIGN.get(), WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+				.overrideLootTable(HANGING_SIGN.get().getLootTable())
+		));
+		this.SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_sign", (properties) -> new SignItem(SIGN.get(), WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+		this.HANGING_SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_hanging_sign", (properties) -> new HangingSignItem(HANGING_SIGN.get(), WALL_HANGING_SIGN.get(), properties), new Item.Properties().stacksTo(16));
 	}
 }
