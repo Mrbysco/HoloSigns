@@ -24,8 +24,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(AbstractSignRenderer.class)
 public abstract class AbstractSignRendererMixin {
-	//TODO: Fix translucent rendering of glass based signs
-
 	@Shadow
 	protected abstract float getSignModelRenderScale();
 
