@@ -5,7 +5,7 @@
   "package": "com.mrbysco.holosigns.mixin",
   "target": "@env(DEFAULT)",
   "client": [
-	"SignRendererMixin"
+    "AbstractSignRendererMixin"
   ],
   "injectors": {
 	"defaultRequire": 1

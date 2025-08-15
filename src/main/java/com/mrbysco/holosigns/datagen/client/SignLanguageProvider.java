@@ -41,9 +41,9 @@ public class SignLanguageProvider extends LanguageProvider {
 	 * @param name The name of the sign
 	 */
 	private void addSign(SignReg reg, String name) {
-		add("block.holosigns." + reg.getSign().getId().getPath(), name + " Sign");
-		add("block.holosigns." + reg.getWallSign().getId().getPath(), name + " Wall Sign");
-		add("block.holosigns." + reg.getHangingSign().getId().getPath(), name + " Hanging Sign");
-		add("block.holosigns." + reg.getWallHangingSign().getId().getPath(), name + " Wall Hanging Sign");
+		add("item.holosigns." + reg.getSign().getId().getPath(), name + " Sign");
+		add("item.holosigns." + reg.getWallSign().getId().getPath(), name + " Wall Sign");
+		add("item.holosigns." + reg.getHangingSign().getId().getPath(), name + " Hanging Sign");
+		add("item.holosigns." + reg.getWallHangingSign().getId().getPath(), name + " Wall Hanging Sign");
 	}
 }
