@@ -48,7 +48,7 @@ public class SignRegistry {
 	public static final SignReg BLACK_STAINED_GLASS = registerSign("black_stained_glass", DyeColor.BLACK.getMapColor(), SoundType.GLASS);
 
 	public static final Supplier<AttachmentType<Boolean>> INVISIBLE = ATTACHMENT_TYPES.register(
-			"invisible", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL).build()
+			"invisible", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL.fieldOf("invisible")).build()
 	);
 
 	public static SignReg registerSign(String name, MapColor color, SoundType soundType) {

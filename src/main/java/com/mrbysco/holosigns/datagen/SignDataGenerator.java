@@ -15,7 +15,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class SignDataGenerator {
 	@SubscribeEvent
 	public static void gatherData(GatherDataEvent.Client event) {
@@ -24,9 +24,8 @@ public class SignDataGenerator {
 		CompletableFuture<Provider> lookupProvider = event.getLookupProvider();
 
 		generator.addProvider(true, new SignRecipeProvider.Runner(packOutput, lookupProvider));
-		SignBlockTagProvider blockTags = new SignBlockTagProvider(packOutput, lookupProvider);
-		generator.addProvider(true, blockTags);
-		generator.addProvider(true, new SignItemTagProvider(packOutput, lookupProvider, blockTags));
+		generator.addProvider(true, new SignBlockTagProvider(packOutput, lookupProvider));
+		generator.addProvider(true, new SignItemTagProvider(packOutput, lookupProvider));
 		generator.addProvider(true, new SignLootProvider(packOutput, lookupProvider));
 
 		generator.addProvider(true, new SignLanguageProvider(packOutput));
