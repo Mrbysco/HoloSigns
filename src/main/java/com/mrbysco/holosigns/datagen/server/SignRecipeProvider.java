@@ -66,7 +66,7 @@ public class SignRecipeProvider extends RecipeProvider {
 				.pattern("###")
 				.group("hanging_sign")
 				.define('#', material)
-				.define('X', Items.CHAIN)
+				.define('X', Items.IRON_CHAIN)
 				.unlockedBy("has_material", has(material))
 				.save(output);
 	}

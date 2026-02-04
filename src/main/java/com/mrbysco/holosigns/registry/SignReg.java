@@ -81,14 +81,14 @@ public class SignReg {
 		this.SIGN = SignRegistry.BLOCKS.registerBlock(name + "_sign", (properties) -> new StandingSignBlock(this.TYPE, properties
 				.mapColor(color)
 				.forceSolidOn()
-				.noCollission()
+				.noCollision()
 				.strength(1.0F)
 				.ignitedByLava()
 		));
 		this.WALL_SIGN = SignRegistry.BLOCKS.registerBlock(name + "_wall_sign", (properties) -> new WallSignBlock(this.TYPE, properties
 				.mapColor(color)
 				.forceSolidOn()
-				.noCollission()
+				.noCollision()
 				.strength(1.0F)
 				.overrideLootTable(SIGN.get().getLootTable())
 				.ignitedByLava()
@@ -97,7 +97,7 @@ public class SignReg {
 				.mapColor(color)
 				.forceSolidOn()
 				.instrument(NoteBlockInstrument.BASS)
-				.noCollission()
+				.noCollision()
 				.strength(1.0F)
 				.ignitedByLava()
 		));
@@ -105,7 +105,7 @@ public class SignReg {
 				.mapColor(color)
 				.forceSolidOn()
 				.instrument(NoteBlockInstrument.BASS)
-				.noCollission()
+				.noCollision()
 				.strength(1.0F)
 				.ignitedByLava()
 				.overrideLootTable(HANGING_SIGN.get().getLootTable())

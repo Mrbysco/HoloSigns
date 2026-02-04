@@ -37,7 +37,8 @@ public class SignLanguageProvider extends LanguageProvider {
 
 	/**
 	 * Add translations for the signs
-	 * @param reg The sign registry object
+	 *
+	 * @param reg  The sign registry object
 	 * @param name The name of the sign
 	 */
 	private void addSign(SignReg reg, String name) {

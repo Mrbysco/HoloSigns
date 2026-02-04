@@ -30,6 +30,6 @@ public class SignDataGenerator {
 
 		generator.addProvider(true, new SignLanguageProvider(packOutput));
 		generator.addProvider(true, new SignModelProvider(packOutput));
-		
+
 	}
 }

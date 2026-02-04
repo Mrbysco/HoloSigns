@@ -5,11 +5,14 @@ import com.mrbysco.holosigns.registry.SignRegistry;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 
+@EventBusSubscriber
 public class ClientHandler {
 
-	@SuppressWarnings("deprecation")
+	@SubscribeEvent
 	public static void onClientSetup(final FMLClientSetupEvent event) {
 		event.enqueueWork(() -> {
 			for (SignReg sign : SignRegistry.SIGNS) {

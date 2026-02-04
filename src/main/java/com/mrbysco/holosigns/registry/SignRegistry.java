@@ -58,7 +58,7 @@ public class SignRegistry {
 	}
 
 	public static void addBlockEntityTypes(BlockEntityTypeAddBlocksEvent event) {
-		for(SignReg reg : SIGNS) {
+		for (SignReg reg : SIGNS) {
 			event.modify(BlockEntityType.SIGN, reg.getSign().get(), reg.getWallSign().get());
 			event.modify(BlockEntityType.HANGING_SIGN, reg.getHangingSign().get(), reg.getWallHangingSign().get());
 		}
