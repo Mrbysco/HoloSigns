@@ -4,6 +4,7 @@ import com.mrbysco.holosigns.HoloSignsMod;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -13,7 +14,7 @@ public class SignBlockTagProvider extends BlockTagsProvider {
 	}
 
 	@Override
-	protected void addTags(HolderLookup.Provider provider) {
+	protected void addTags(HolderLookup.@NonNull Provider provider) {
 
 	}
 }

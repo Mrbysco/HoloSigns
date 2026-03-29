@@ -8,6 +8,7 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
+import org.jspecify.annotations.NonNull;
 
 public class SignModelProvider extends ModelProvider {
 	public SignModelProvider(PackOutput packOutput) {
@@ -15,7 +16,7 @@ public class SignModelProvider extends ModelProvider {
 	}
 
 	@Override
-	protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
+	protected void registerModels(@NonNull BlockModelGenerators blockModels, @NonNull ItemModelGenerators itemModels) {
 		for (SignReg reg : SignRegistry.SIGNS) {
 			blockModels.createHangingSign(Blocks.GLASS, reg.getSign().get(), reg.getWallSign().get());
 			blockModels.createHangingSign(Blocks.GLASS, reg.getHangingSign().get(), reg.getWallHangingSign().get());

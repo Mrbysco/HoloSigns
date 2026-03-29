@@ -110,7 +110,7 @@ public class SignReg {
 				.ignitedByLava()
 				.overrideLootTable(HANGING_SIGN.get().getLootTable())
 		));
-		this.SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_sign", (properties) -> new SignItem(SIGN.get(), WALL_SIGN.get(), properties), new Item.Properties().stacksTo(16));
-		this.HANGING_SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_hanging_sign", (properties) -> new HangingSignItem(HANGING_SIGN.get(), WALL_HANGING_SIGN.get(), properties), new Item.Properties().stacksTo(16));
+		this.SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_sign", (properties) -> new SignItem(SIGN.get(), WALL_SIGN.get(), properties), () -> new Item.Properties().stacksTo(16));
+		this.HANGING_SIGN_ITEM = SignRegistry.ITEMS.registerItem(name + "_hanging_sign", (properties) -> new HangingSignItem(HANGING_SIGN.get(), WALL_HANGING_SIGN.get(), properties), () -> new Item.Properties().stacksTo(16));
 	}
 }

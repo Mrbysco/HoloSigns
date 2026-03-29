@@ -12,6 +12,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import org.jspecify.annotations.NonNull;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -77,12 +78,12 @@ public class SignRecipeProvider extends RecipeProvider {
 		}
 
 		@Override
-		protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
+		protected @NonNull RecipeProvider createRecipeProvider(HolderLookup.@NonNull Provider provider, @NonNull RecipeOutput recipeOutput) {
 			return new SignRecipeProvider(provider, recipeOutput);
 		}
 
 		@Override
-		public String getName() {
+		public @NonNull String getName() {
 			return "HoloSigns Recipes";
 		}
 	}
